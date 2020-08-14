@@ -16,6 +16,9 @@ class MyApp extends StatelessWidget {
           bodyText1: TextStyle(
             fontFamily: 'ApercuPro',
           ),
+          bodyText2: TextStyle(
+            fontFamily: 'ApercuPro',
+          ),
         ),
       ),
       routes: {

@@ -28,7 +28,7 @@ class LoginScreen extends StatelessWidget {
                         style: TextStyle(fontSize: 18.0),
                       ),
                       Text(
-                        'Recipe book',
+                        'Recipe Book',
                         style: TextStyle(fontSize: 36.0),
                       ),
                     ],
