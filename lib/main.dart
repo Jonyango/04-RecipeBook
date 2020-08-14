@@ -7,12 +7,21 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text(
-        'Happy Coding!'
-      ),
-      );
+    return MaterialApp(
+      home: HomeScreen(),
+    );
   }
 }
 
-
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          child: Text('Happy Coding!'),
+        ),
+      ),
+    );
+  }
+}
