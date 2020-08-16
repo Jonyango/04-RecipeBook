@@ -49,15 +49,95 @@ class LoginScreen extends StatelessWidget {
                 placeholder: 'Password',
                 obscureText: true,
               ),
-              RaisedButton(
+              SizedBox(
+                width: double.infinity,
+                height: 30.0,
+                child: Text(
+                  'Forgot password?',
+                  textAlign: TextAlign.end,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14.0,
+                    decoration: TextDecoration.underline,
+                    decorationThickness: 2.0,
+                    decorationColor: Colors.white54,
+                  ),
+                ),
+              ),
+              CustomisedRaisedButton(
                 onPressed: () {},
-                color: Colors.white,
-                textColor: Color(0xff34A853),
-                child: Text('Login'),
-              )
+                buttonLabel: 'Login',
+                width: double.infinity,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Login with',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14.0,
+                  ),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  CustomisedRaisedButton(
+                    onPressed: () {},
+                    width: MediaQuery.of(context).size.width * 0.35,
+                    child: Image.asset('assets/images/Logo.png'),
+                  ),
+                  CustomisedRaisedButton(
+                    onPressed: () {},
+                    width: MediaQuery.of(context).size.width * 0.35,
+                    child: Image.asset('assets/images/Logo.png'),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class CustomisedRaisedButton extends StatelessWidget {
+  CustomisedRaisedButton({
+    @required this.onPressed,
+    this.buttonLabel,
+    this.child,
+    this.padding,
+    this.width,
+  });
+
+  final String buttonLabel;
+  final Widget child;
+  final EdgeInsets padding;
+  final double width;
+  final Function onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: this.width,
+      child: RaisedButton(
+        onPressed: this.onPressed,
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+        color: Colors.white,
+        padding: this.padding ??
+            EdgeInsets.symmetric(
+              vertical: 20.0,
+            ),
+        child: this.child ??
+            Text(
+              this.buttonLabel ?? '',
+              style: TextStyle(
+                color: Color(0xff34A853),
+                fontSize: 14.0,
+              ),
+            ),
       ),
     );
   }
