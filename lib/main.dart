@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipebook/pages/login.dart';
 
 void main() {
   runApp(MyApp());
@@ -7,12 +8,8 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text(
-        'Happy Coding!'
-      ),
-      );
+    return MaterialApp(
+      home: LoginPage(),
+    );
   }
 }
-
-
